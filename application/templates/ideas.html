@@ -1,0 +1,15 @@
+{% extends "layout.html" %} 
+{% block head_content %} 
+<title>Idea Sharing Home</title>
+{% block head_content %} 
+{% blok body_content %} 
+{% for idea in ideas %} 
+<p>{{idea.title}}</p>
+<br>
+<p>{{idea.description))</p>
+<br>
+<p>{{ idea.tag_id }}</p>
+<br>
+<p>{{ idea.name }}</p>
+{% endfor %}
+{% endblock body_content %}
