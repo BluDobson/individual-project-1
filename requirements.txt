@@ -1,0 +1,10 @@
+Flask
+Flask-SQLAlchemy
+SQLAlchemy
+pymysql
+gunicorn
+flask-wtf
+wtforms
+pytest
+pytest-cov
+flask-bcrypt
