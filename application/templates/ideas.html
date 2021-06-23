@@ -4,7 +4,7 @@
 {% endblock head_content %} 
 {% block body_content %} 
 {% for tag in tags %} 
-<p>{{ tag.id }} - {{ tag.name }}</p>
+<p>{{ tag.id }} {{ tag.name}}</p>
 {% endfor %}
 {% for idea in ideas %} 
 <p>{{ idea.title }}</p>
