@@ -1,6 +1,6 @@
 from application import app, db
 from application.models import Ideas, Tags
-from application.forms import ideaForm
+from application.forms import ideaForm updateideaForm
 from flask import Flask, render_template, request
 
 def get_num(string):
