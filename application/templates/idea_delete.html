@@ -1,0 +1,21 @@
+{% extends "layout.html" %} 
+{% block head_content %} 
+<title>Delete an idea!</title>
+{% endblock head_content %} 
+{% block body_content %}
+<div class='form'>
+    <form method='POST' action=''>
+        {{ form.hidden_tag() }}
+        {{ form.id.label }}{{ form.id }}
+        {% if form.id.errors %}
+        <div class='error'>
+            {% for error in form.id.errors %} 
+            <span>{{error}}</span>
+            {% endfor %} 
+        </div>
+        {% endif %}
+        <br>
+        {{ form.submit }}
+    </form>
+</div>
+{% endblock body_content %}
