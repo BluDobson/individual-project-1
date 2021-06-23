@@ -29,7 +29,7 @@ def add_idea():
             new_idea = Ideas(title=title, description=description, tag_id=tag_id, name=name)
             db.session.add(new_idea)
             db.session.commit()
-            return f'Added {title} to ideas!'
+            return redirect(url_for('ideas_home'))
         else:
             return render_template('idea_entry.html', form=form, title="", description="", tag_id="", name="")
     else:
