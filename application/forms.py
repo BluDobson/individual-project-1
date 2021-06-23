@@ -25,3 +25,8 @@ class updateideaForm(FlaskForm):
     tag_id = QuerySelectField('Update the tag:', query_factory=get_tags, get_label='name')
     name = StringField('Update the name:', validators=[Length(max=20)])
     submit = SubmitField('Update idea!')
+
+class deleteideaForm(FlaskForm):
+    id = QuerySelectField('Choose the idea you want to delete:', query_factory=get_idea, get_label='title', validators=[DataRequired()])
+    submit = SubmitField('Delete idea!')
+
