@@ -5,5 +5,5 @@ from flask import Flask, render_template
 @app.route('/')
 def ideas_home():
     all_ideas = Ideas.query.all()
-    all_tags = Tags.query.all()
-    return render_template('ideas.html', ideas = all_ideas, tags = all_tags)
+
+    return render_template('ideas.html', ideas = all_ideas)
