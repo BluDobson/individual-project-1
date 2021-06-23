@@ -1,6 +1,7 @@
 from application import app, db
 from application.models import Ideas, Tags
 from application.forms import ideaForm, updateideaForm, deleteideaForm
+
 from flask import Flask, render_template, request, redirect, url_for
 
 def get_num(string):
@@ -65,7 +66,7 @@ def update_idea():
             return render_template('idea_update.html', form=form, id="", title="", description="", tag_id="", name="")
     else:
         return render_template('idea_update.html', form=form)
-
+      
 @app.route('/delete/idea', methods=['GET', 'POST'])
 def delete_idea():
     form = deleteideaForm()
