@@ -29,3 +29,4 @@ class updateideaForm(FlaskForm):
 class deleteideaForm(FlaskForm):
     id = QuerySelectField('Choose the idea you want to delete:', query_factory=get_idea, get_label='title', validators=[DataRequired()])
     submit = SubmitField('Delete idea!')
+
