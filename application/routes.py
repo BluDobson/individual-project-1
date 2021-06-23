@@ -13,8 +13,8 @@ def get_num(string):
 @app.route('/')
 def ideas_home():
     all_ideas = Ideas.query.all()
-    tags = Tags.query.all()
-    return render_template('ideas.html', ideas = all_ideas)
+    all_tags = Tags.query.all()
+    return render_template('ideas.html', ideas = all_ideas, tags = all_tags)
 
 @app.route('/add/idea', methods=['GET', 'POST'])
 def add_idea():
