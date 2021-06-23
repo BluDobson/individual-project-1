@@ -23,7 +23,7 @@ def add_idea():
         if form.validate_on_submit():
             title = form.title.data
             description = form.description.data
-            tag_id = form.tag_id.data
+            tag_id = str(form.tag_id.data)
             tag_id = get_num(tag_id)
             name = form.name.data
             new_idea = Ideas(title=title, description=description, tag_id=tag_id, name=name)
