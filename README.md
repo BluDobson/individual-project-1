@@ -53,7 +53,7 @@ The full risk assessment can be found through this [link](https://qalearning-my.
 ### __Trello Board__
 I decided to use Trello to track the progress of my project, having used it for previous projects I am familiar with the platform and it meets the needs of this project.
 
-The complete board can be found here: https://trello.com/b/Un8ul8xd
+The complete board can be found [here](https://trello.com/b/Un8ul8xd)
 
 ### __Entity Relationship Diagram__
 
