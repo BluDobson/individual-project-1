@@ -3,7 +3,7 @@ from application import db
 class Tags(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), nullable=False)
-    tags = db.relationship('Tags', backref='tag')
+    Idea_tags = db.relationship('Ideas', backref='tag')
 
 class Ideas(db.Model):
     id = db.Column(db.Integer, primary_key=True)
