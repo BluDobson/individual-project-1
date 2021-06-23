@@ -5,6 +5,7 @@
 {% block body_content %} 
 {% for tag in tags %} 
 <p>{{ tag.id }} - {{ tag.name }}</p>
+{% endfor %}
 {% for idea in ideas %} 
 <p>{{ idea.title }}</p>
 <p>{{ idea.description }}</p>
