@@ -3,6 +3,13 @@ from application.models import Ideas, Tags
 from application.forms import ideaForm
 from flask import Flask, render_template, request
 
+def get_num(string):
+    ls = ""
+    for char in string:
+        if char.isdigit():
+            ls += char
+    return int(ls)
+
 @app.route('/')
 def ideas_home():
     all_ideas = Ideas.query.all()
@@ -16,7 +23,7 @@ def add_idea():
         if form.validate_on_submit():
             title = form.title.data
             description = form.description.data
-            tag_id = form.tag_id.data
+            tag_id = get_num(form.tag_id.data)
             name = form.name.data
             new_idea = Ideas(title=title, description=description, tag_id=tag_id, name=name)
             db.session.add(new_idea)
