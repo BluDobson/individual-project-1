@@ -1,7 +1,7 @@
 from application import app, db
 from application.models import Ideas, Tags
 from application.forms import ideaForm, updateideaForm
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 def get_num(string):
     ls = ""
