@@ -18,7 +18,7 @@ def add_idea():
             description = form.description.data
             tag_id = form.tag_id.data
             name = form.name.data
-            new_idea = Idea(title=title, description=description, tag_id=tag_id, name=name)
+            new_idea = Ideas(title=title, description=description, tag_id=tag_id, name=name)
             db.session.add(new_idea)
             db.session.commit()
             return f'Added {title} to ideas!'
