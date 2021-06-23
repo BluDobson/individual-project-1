@@ -34,3 +34,34 @@ def add_idea():
             return render_template('idea_entry.html', form=form, title="", description="", tag_id="", name="")
     else:
         return render_template('idea_entry.html', form=form)
+
+@app.route('/update/idea', methods=['GET', 'POST'])
+def update_idea():
+    form = updateideaForm()
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            idea_id = str(form.id.data)
+            idea_id = get_num(idea_id)
+            idea = Ideas.query.get(idea_id)
+            if form.title.data != "":
+                idea.title = form.title.data
+            else:
+                pass
+            if form.description.data != "":
+                idea.description = form.description.data
+            else:
+                pass
+            tag_id = str(form.tag_id.data)
+            tag_id = get_num(tag_id)
+            idea.tag_id = tag_id
+            if form.name.data != "":
+                idea.name = form.name.data
+            else:
+                pass
+            db.session.commit()
+            return redirect(url_for('ideas_home'))
+        else:
+            return render_template('idea_update.html', form=form, id="", title="", description="", tag_id="", name="")
+    else:
+        return render_template('idea_update.html', form=form)
+            
