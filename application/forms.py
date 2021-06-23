@@ -24,4 +24,4 @@ class updateideaForm(FlaskForm):
     description = StringField('Update the description:', validators=[Length(max=200)])
     tag_id = QuerySelectField('Update the tag:', query_factory=get_tags, get_label='name')
     name = StringField('Update the name:', validators=[Length(max=20)])
-    sumbit = SubmitField('Update idea!')
+    submit = SubmitField('Update idea!')
