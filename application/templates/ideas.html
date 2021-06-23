@@ -2,14 +2,17 @@
 {% block head_content %} 
 <title>Idea Sharing Home</title>
 {% endblock head_content %} 
-{% block body_content %} 
+{% block body_content %}
+<h3>Tags</h3> 
 {% for tag in tags %} 
 <h6>{{ tag.id }} {{ tag.name}}</h6>
 {% endfor %}
+<h3>Ideas</h3>
 {% for idea in ideas %} 
 <p>{{ idea.title }}</p>
 <p>{{ idea.description }}</p>
 <p>Tag: {{ idea.tag_id }}</p>
 <p>{{ idea.name }}</p>
+<p>--------------</p>
 {% endfor %}
 {% endblock body_content %}
