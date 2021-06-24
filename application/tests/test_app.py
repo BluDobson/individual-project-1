@@ -29,3 +29,8 @@ class TestViews(TestBase):
         response = self.client.get(url_for('ideas_home'))
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Landscape", response.data)
+
+class TestAdd(TestBase):
+    def test_add(self):
+        response = self.client.post(url_for('add_idea'), data = dict(title="Valley", description="Note down the location", tag_id="1", name="John"), follow_redirects=True)
+        self.assertIn(b'John', response.data)
