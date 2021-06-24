@@ -13,9 +13,33 @@
         {{ form.tag_id.label }}{{ form.tag_id }}
         <br>
         {{ form.name.label }}{{ form.name }}
-        {% if error %}
-                <br/>
-                <i>{{error}}</i>
+        {% if form.name.errors %}
+        <div class='error'>
+            {% for error in form.name.errors %} 
+            <span>{{error}}</span>
+            {% endfor %} 
+        </div>
+        {% endif %}
+        {% if form.description.errors %}
+        <div class='error'>
+            {% for error in form.description.errors %} 
+            <span>{{error}}</span>
+            {% endfor %} 
+        </div>
+        {% endif %}
+        {% if form.tag_id.errors %}
+        <div class='error'>
+            {% for error in form.tag_id.errors %} 
+            <span>{{error}}</span>
+            {% endfor %} 
+        </div>
+        {% endif %}
+        {% if form.name.errors %}
+        <div class='error'>
+            {% for error in form.name.errors %} 
+            <span>{{error}}</span>
+            {% endfor %} 
+        </div>
         {% endif %}
         <br>
         {{ form.submit }}
