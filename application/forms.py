@@ -12,21 +12,20 @@ def get_idea():
     return Ideas.query
 
 class ideaForm(FlaskForm):
-    title = StringField('Enter the title for your idea:', validators=[DataRequired(message="The title field can't be empty"), Length(max=30, message="That title is too long")])
-    description = StringField('Enter a description for your idea:', validators=[Length(max=200, message="That description is too long")])
-    tag_id = QuerySelectField('Choose a tag that suits your idea:', query_factory=get_tags, get_label='name', validators=[DataRequired(message="A tag is required")])
-    name = StringField('Enter your name:', validators=[DataRequired(), Length(max=20, message="That name is too long")])
+    title = StringField('Enter the title for your idea:', validators=[DataRequired(), Length(max=30)])
+    description = StringField('Enter a description for your idea:', validators=[Length(max=200)])
+    tag_id = QuerySelectField('Choose a tag that suits your idea:', query_factory=get_tags, get_label='name', validators=[DataRequired()])
+    name = StringField('Enter your name:', validators=[DataRequired(), Length(max=20)])
     submit = SubmitField('Add idea!')
 
 class updateideaForm(FlaskForm):
-    id = QuerySelectField('Choose the idea you want to update:', query_factory=get_idea, get_label='title', validators=[DataRequired("An ID is required")])
-    title = StringField('Update the title:', validators=[Length(max=30, message="That title is too long")])
-    description = StringField('Update the description:', validators=[Length(max=200, message="That description is too long")])
+    id = QuerySelectField('Choose the idea you want to update:', query_factory=get_idea, get_label='title', validators=[DataRequired()])
+    title = StringField('Update the title:', validators=[Length(max=30)])
+    description = StringField('Update the description:', validators=[Length(max=200)])
     tag_id = QuerySelectField('Update the tag:', query_factory=get_tags, get_label='name')
-    name = StringField('Update the name:', validators=[Length(max=20, message="That name is too long")])
+    name = StringField('Update the name:', validators=[Length(max=20)])
     submit = SubmitField('Update idea!')
 
 class deleteideaForm(FlaskForm):
-    id = QuerySelectField('Choose the idea you want to delete:', query_factory=get_idea, get_label='title', validators=[DataRequired(message="An ID is required")])
+    id = QuerySelectField('Choose the idea you want to delete:', query_factory=get_idea, get_label='title', validators=[DataRequired()])
     submit = SubmitField('Delete idea!')
-
