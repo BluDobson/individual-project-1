@@ -82,6 +82,32 @@ This allowed me to run tests on new builds I pushed to the development branch an
 
 ![ci pipeline diagram](./images/CI.png)
 
+I used the following script to run tests and build the application.
+
+```
+export duri skey testdburi
+python3 -m venv venv
+. ./venv/bin/activate
+pip3 install -r requirements.txt
+pytest --cov=application . --cov-report html
+zip archive.zip htmlcov/index.html
+gunicorn --workers=4 --bind=0.0.0.0:5000 app:app
+```
+
+What the script does
+
+**1.** Exports secrets that are needed by the application.
+
+**2.** Creates a virtual environment and activates it
+
+**3.** Installs the required packages for the application to run
+
+**4.** Runs the tests in the application and creates a file for archiving
+
+**5.** Starts the application on 4 different worker processes.
+
+Then, once the build is ended, the testing coverage file is archived for future analysis
+
 ## __Development__
 
 ### __Front End__
