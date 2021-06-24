@@ -34,3 +34,17 @@ class TestAdd(TestBase):
     def test_add(self):
         response = self.client.post(url_for('add_idea'), data = dict(title="Valley", description="Note down the location", tag_id="1", name="John"), follow_redirects=True)
         self.assertIn(b'John', response.data)
+
+    def test_add_error(self):
+        response = self.client.post(url_for('add_idea'), data = dict(title="This title is way too long on purpose", description="", tag_id="2", name="Steve"), follow_redirects=True)
+        self.assertIn(b'Enter the title for your idea:', response.data)
+
+class TestUpdate(TestBase):
+    def test_update(self):
+        response = self.client.post(url_for('update_idea'), data = dict(id="1", title="World Wonder", description="Try and find an intersting perspective that people haven't used!", tag_id="1", name=""), follow_redirects=True)
+        self.assertNotIn(b'Bridge', response.data)
+
+class TestDelete(TestBase):
+    def test_delete(self):
+        response = self.client.post(url_for('delete_idea'), data = dict(id="2"), follow_redirects=True)
+        self.assertNotIn(b'Working person', response.data)
