@@ -70,6 +70,10 @@ The initial ERD I made for the project can be seen here:
 
 However I decided to simplify the design to meet the MVP, and then allow for iteration once the MVP was fully developed and functional, and any issues fixed. This is the new ERD for the project:
 
+![second ERD](./images/ERD2.png)
+
+If the project had more time, I would have liked to add the user functionality, which would make the website more usable, since currently anyone can change any posts.
+
 ### __Continuous Integration__
 
 I used Jenkins to implement continuous integration into the project, this allowed me to pull new changes that are pushed to my github repository via a webhook, then run a script which runs through the unit and integration tests, save the coverage report produced by the tests, and then build the application so it can be accessed. 
