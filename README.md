@@ -7,7 +7,10 @@
     * [Risk Assessment](#Risk-Assessment)
     * [Trello Board](#Trello-Board)
     * [Entity Relationship Diagram](#Entity-Relationship-Diagram)
+    * [Continuous Integration](#Continuous-Integration)
 * [Development](#Development)
+    * [Front End](#Front-End)
+    * [Integration Testing](#Integration-Testing)
 * [Conclusion](#Conclusion)
 
 
@@ -48,10 +51,14 @@ _Delete:_
 ### __Risk Assessment__
 Here is my risk assessment, going over all the potential hazards I may face during the project, and measures I have implemented to ensure they are avoided, or the impact of the hazard is reduced or mitigated
 
+![risk assessment](./images/RiskAssessment.png)
+
 The full risk assessment can be found through this [link](https://qalearning-my.sharepoint.com/:x:/g/personal/bdobson_qa_com/Ea7VL69js3lFsdUOYl5c-lYBWXcJKyovMulqUqg5MI5Vuw?e=A61Vvv)
 
 ### __Trello Board__
 I decided to use Trello to track the progress of my project, having used it for previous projects I am familiar with the platform and it meets the needs of this project.
+
+![trello board](./images/Trello.png)
 
 The complete board can be found [here](https://trello.com/b/Un8ul8xd)
 
@@ -59,11 +66,25 @@ The complete board can be found [here](https://trello.com/b/Un8ul8xd)
 
 The initial ERD I made for the project can be seen here:
 
+![first ERD](./images/ERD1.png)
+
 However I decided to simplify the design to meet the MVP, and then allow for iteration once the MVP was fully developed and functional, and any issues fixed. This is the new ERD for the project:
 
+### __Continuous Integration__
 
+I used Jenkins to implement continuous integration into the project, this allowed me to pull new changes that are pushed to my github repository via a webhook, then run a script which runs through the unit and integration tests, save the coverage report produced by the tests, and then build the application so it can be accessed. 
+
+This allowed me to run tests on new builds I pushed to the development branch and ensure that everything worked, before pushing it into the main branch on my VCS.
+
+![ci pipeline diagram](./images/CI.png)
 
 ## __Development__
+
+### __Front End__
+
+### __Test Analysis
+
+### __Integration Testing__
 
 ## __Conclusion__
 
