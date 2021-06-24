@@ -82,7 +82,7 @@ This allowed me to run tests on new builds I pushed to the development branch an
 
 ### __Front End__
 
-### __Test Analysis
+### __Test Analysis__
 
 ### __Integration Testing__
 
