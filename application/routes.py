@@ -32,11 +32,7 @@ def add_idea():
             db.session.commit()
             return redirect(url_for('ideas_home'))
         else:
-            error = next(iter(form.title.errors), None)
-            error = next(iter(form.description.errors), None)
-            error = next(iter(form.tag_id.errors), None)
-            error = next(iter(form.name.errors), None)
-            return render_template('idea_entry.html', form=form, error=error, title="", description="", tag_id="", name="")
+            return render_template('idea_entry.html', form=form, title="", description="", tag_id="", name="")
     else:
         return render_template('idea_entry.html', form=form)
 
