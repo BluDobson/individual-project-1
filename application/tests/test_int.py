@@ -4,12 +4,13 @@ from flask_testing import LiveServerTestCase
 from urllib.request import urlopen
 from application import app, db
 from application.models import Ideas, Tags
+import os
 
 class TestBase(LiveServerTestCase):
     TEST_PORT = 5050
 
     def create_app(self):
-        app.config.update(SQLALCHEMY_DATABASE_URI="sqlite:///test.db", LIVESERVER_PORT=self.TEST_PORT, DEBUG=True, TESTING=True)
+        app.config.update(SQLALCHEMY_DATABASE_URI=os.getenv('testdburi'), LIVESERVER_PORT=self.TEST_PORT, DEBUG=True, TESTING=True)
         return app
 
     def setUp(self):
