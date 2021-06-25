@@ -47,7 +47,7 @@ _Delete:_
 * Delete ideas from the list.
 ---
 ## __Design__
----
+
 ### __Risk Assessment__
 Here is my risk assessment, going over all the potential hazards I may face during the project, and measures I have implemented to ensure they are avoided, or the impact of the hazard is reduced or mitigated
 
@@ -114,7 +114,6 @@ Then, once the build is ended, the testing coverage file is archived for future 
 ---
 ## __Development__
 
----
 ### __Front End__
 
 To make all areas of the application easily accessible, I added basic navigation to the layout.html, and made each page extend from that. This makes the application more user friendly, and easier to build on in the future, as new routes can simply extend from the layout.
